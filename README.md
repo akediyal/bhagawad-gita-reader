@@ -2,6 +2,11 @@
 
 A clean, browser-based reader for the Bhagavad Gita with Sanskrit text, transliteration, and multi-author commentaries.
 
+## Screenshots
+
+![Chapter Dark](assets/chapter-dark.png)
+![Verse Light](assets/verse-light.png)
+
 ## Features
 
 - Browse all 18 chapters and their verses via a sidebar tree or top navigation dropdowns
