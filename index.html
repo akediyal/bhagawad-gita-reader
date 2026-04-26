@@ -20,15 +20,22 @@
     <nav
       class="top-nav px-4 flex-shrink-0 d-flex align-items-center justify-content-between"
     >
-      <h1 class="nav-brand m-0 fw-bold">Bhagavad Gita</h1>
+      <span class="nav-brand m-0 fw-bold fs-4">Bhagavad Gita</span>
 
       <div class="d-flex gap-3 align-items-center">
+        <label for="top-chapter-select" class="visually-hidden"
+          >Select Chapter</label
+        >
         <select
           id="top-chapter-select"
           class="form-select custom-select w-auto"
         >
           <option value="" selected disabled>Select Chapter</option>
         </select>
+
+        <label for="top-verse-select" class="visually-hidden"
+          >Select Verse</label
+        >
         <select
           id="top-verse-select"
           class="form-select custom-select w-auto"
@@ -36,7 +43,14 @@
         >
           <option value="" selected disabled>Select Verse</option>
         </select>
-        <button id="theme-toggle" class="btn custom-btn">🌓</button>
+
+        <button
+          id="theme-toggle"
+          class="btn custom-btn"
+          aria-label="Toggle Theme"
+        >
+          🌓
+        </button>
       </div>
     </nav>
 

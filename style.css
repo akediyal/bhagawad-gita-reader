@@ -1,184 +1,228 @@
+:root {
+  --nav-height: 70px;
+  --sidebar-width: 320px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
 :root[data-bs-theme="dark"] {
-    --bg-main: #02040F;
-    --bg-surface: #002642;
-    --bg-sidebar: #011627;
-    --text-main: #E5DADA;
-    --text-muted: #9ba1a6;
-    --accent-primary: #ff4d6d;
-    --accent-secondary: #E59500;
-    --border-color: #840032;
+  --bg-main: #02040f;
+  --bg-surface: #002642;
+  --bg-sidebar: #011627;
+  --text-main: #e5dada;
+  --text-muted: #9ba1a6;
+  --accent-primary: #840032;
+  --accent-secondary: #e59500;
+  --border-color: #840032;
+  --brand-color: #e5dada;
+  --heading-color: #e59500;
 }
 
 :root[data-bs-theme="light"] {
-    --bg-main: #ffffff;
-    --bg-surface: #f4f4f5;
-    --bg-sidebar: #e4e4e7;
-    --text-main: #18181b;
-    --text-muted: #52525b;
-    --accent-primary: #840032;
-    --accent-secondary: #b07000;
-    --border-color: #d4d4d8;
+  --bg-main: #ffffff;
+  --bg-surface: #f4f4f5;
+  --bg-sidebar: #e4e4e7;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --accent-primary: #840032;
+  --accent-secondary: #b07000;
+  --border-color: #d4d4d8;
+  --brand-color: #840032;
+  --heading-color: #840032;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .top-nav {
-    background-color: var(--bg-surface);
-    border-bottom: 2px solid var(--accent-primary);
-    height: 70px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+  background-color: var(--bg-main);
+  border-bottom: 2px solid var(--accent-primary);
+  height: var(--nav-height);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }
 
 .nav-brand {
-    color: var(--accent-primary);
-    font-size: 1.5rem;
+  color: var(--brand-color);
+  font-size: 1.5rem;
 }
 
 #sidebar {
-    width: 320px;
-    background-color: var(--bg-sidebar);
-    border-right: 1px solid var(--border-color);
+  width: var(--sidebar-width);
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
 }
 
 .custom-select {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
 }
 
 .custom-select:focus {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 0.25rem rgba(132, 0, 50, 0.25);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 0.25rem rgba(132, 0, 50, 0.25);
 }
 
 .custom-btn {
-    background-color: var(--bg-surface);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
 }
 
 .custom-btn:hover {
-    background-color: var(--border-color);
-    color: var(--text-main);
+  background-color: var(--border-color);
+  color: var(--text-main);
 }
 
 .tree-list {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .tree-chapter {
-    cursor: pointer;
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    color: var(--accent-secondary);
-    background-color: var(--bg-surface);
-    border-left: 3px solid transparent;
-    transition: all 0.2s;
+  cursor: pointer;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--heading-color);
+  background-color: var(--bg-main);
+  border-left: 4px solid transparent;
+  transition: all 0.2s;
 }
 
-.tree-chapter:hover, .tree-chapter.active {
-    background-color: var(--bg-main);
-    border-left: 3px solid var(--accent-primary);
+.tree-chapter:hover,
+.tree-chapter.active {
+  border-left: 4px solid var(--accent-primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .tree-verses {
-    list-style-type: none;
-    padding-left: 1rem;
-    display: none;
-    margin-bottom: 1rem;
+  list-style-type: none;
+  padding-left: 1rem;
+  display: none;
+  margin-bottom: 1rem;
 }
 
 .tree-verses.open {
-    display: block;
+  display: block;
 }
 
 .tree-verse-item {
-    cursor: pointer;
-    color: var(--text-main);
-    padding: 0.5rem 0.75rem;
-    margin-bottom: 0.25rem;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+  color: var(--text-main);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  transition: all 0.2s;
 }
 
-.tree-verse-item:hover, .tree-verse-item.active {
-    background-color: var(--accent-primary);
-    color: #ffffff;
+.tree-verse-item:hover {
+  background-color: var(--border-color);
+}
+
+.tree-verse-item.active {
+  background-color: var(--accent-primary);
+  color: #ffffff;
 }
 
 .theme-text-muted {
-    color: var(--text-muted) !important;
+  color: var(--text-muted);
+}
+.theme-border {
+  border-color: var(--border-color) !important;
+}
+.theme-heading {
+  color: var(--heading-color);
 }
 
 .sanskrit-text {
-    font-family: 'Tiro Devanagari Sanskrit', serif;
-    white-space: pre-wrap;
-    font-size: 1.8rem; /* You can usually make serif fonts slightly larger */
-    line-height: 1.8;
-    color: var(--accent-secondary);
+  font-family: "Tiro Devanagari Sanskrit", serif;
+  white-space: pre-wrap;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: var(--accent-secondary);
 }
 
 .translation-box {
-    background-color: var(--bg-surface);
-    border-left: 3px solid var(--accent-primary);
-    padding: 1.5rem;
-    border-radius: 0 8px 8px 0;
-    height: 100%;
+  background-color: var(--bg-surface);
+  border-left: 3px solid var(--accent-primary);
+  padding: 1.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  height: 100%;
 }
 
 .content-title {
-    color: var(--accent-secondary);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .verse-card {
-    background-color: var(--bg-surface);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.commentary-box {
+  background-color: var(--bg-sidebar);
+  border: 1px solid var(--border-color);
 }
 
 .author-block {
-    background-color: var(--bg-surface);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-    border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid var(--border-color);
 }
 
 .author-type-label {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: var(--accent-secondary);
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    display: block;
-    font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: bold;
 }
 
-#reading-area {
-    animation: fadeIn 0.3s ease-in-out;
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
 }
-
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-main); }
-::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
